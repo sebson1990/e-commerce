@@ -1,0 +1,1 @@
+My e-commerce store confirmation for Order Number {{ order.order_number }}
