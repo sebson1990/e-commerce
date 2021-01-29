@@ -27,7 +27,7 @@ SECRET_KEY = '$a*joef@9kmsxq@jh=f%i8&s4@(ph%6jftc*2da2_r8)a8rf6='
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['my-e-commerce-platfrom.herokuapp.com', 'localhost']
 
 
 # Application definition
@@ -48,9 +48,7 @@ INSTALLED_APPS = [
     'bag',
     'checkout',
     'profiles',
-    
-
-    
+      
  # Other
     'crispy_forms',
 ]
@@ -127,11 +125,17 @@ WSGI_APPLICATION = 'my_e_commerce_platfrom.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+if 'DATABASE_URL' in os.environ:
+    DATABASES = {
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
     }
+else:
+
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
 }
 
 #DATABASES = { 
