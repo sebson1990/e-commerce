@@ -10,6 +10,10 @@ body {
     font-family: 'Lato';
 }
 
+.header-items {
+    color: #4453A4 !important;
+}
+
 /* from Bulma */
 .icon {
     align-items: center;
