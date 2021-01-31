@@ -34,6 +34,8 @@ https://drive.google.com/file/d/1LNSAaxBsjyv7W_cTvfBi9nCU5YSb6KIi/view?usp=shari
 
 - ability to let users rate the products. 
 
+due to number of bugs emerging during the building, the project could not have been finished on time therefore is the hosted site is not accessible on heroku and returns an error. 
+
 ## Technologies Used
 
 - HTML 
@@ -54,13 +56,11 @@ https://drive.google.com/file/d/1LNSAaxBsjyv7W_cTvfBi9nCU5YSb6KIi/view?usp=shari
 
 During the development of the project, regular tests have been conducted. Simplicty of the project did not require test automations, therefore, a manual aproach has been chosen. The tests consisted of:
 
-- adding new reviews and filling in different lenghts of text in the input fields
-- editing the reviews
-- removing the reviews
-- adding new companies
-- editing the company info
-- removing the companies
-- clicking through all of the buttons on the page
+- searching for products
+- filtering products
+- purchasing the products using a test API from Stripe
+- adding/editing/removing products
+- creating user profiles
 
 ## Deployment
 
