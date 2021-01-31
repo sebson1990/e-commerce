@@ -48,8 +48,8 @@ INSTALLED_APPS = [
     'bag',
     'checkout',
     'profiles',
-      
- # Other
+
+    # Other
     'crispy_forms',
     'storages',
 ]
@@ -98,24 +98,24 @@ MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 
 
 AUTHENTICATION_BACKENDS = [
-    
+
     # Needed to login by username in Django admin, regardless of `allauth`
     'django.contrib.auth.backends.ModelBackend',
 
     # `allauth` specific authentication methods, such as login by e-mail
     'allauth.account.auth_backends.AuthenticationBackend',
-    
+
 ]
 
 SITE_ID = 1
 
 
-ACCOUNT_AUTHENTICATION_METHOD = 'username_email'	
-ACCOUNT_EMAIL_REQUIRED = True	
-ACCOUNT_EMAIL_VERIFICATION = 'mandatory'	
-ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True	
-ACCOUNT_USERNAME_MIN_LENGTH = 4	
-LOGIN_URL = '/accounts/login/'	
+ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True
+ACCOUNT_USERNAME_MIN_LENGTH = 4
+LOGIN_URL = '/accounts/login/'
 LOGIN_REDIRECT_URL = '/'
 
 
@@ -179,7 +179,7 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 if 'USE_AWS' in os.environ:
-    
+
     # Cache control
     AWS_S3_OBJECT_PARAMETERS = {
         'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
@@ -204,16 +204,16 @@ if 'USE_AWS' in os.environ:
     MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
 
 
-# Stripe	
-FREE_DELIVERY_THRESHOLD = 50	
-STANDARD_DELIVERY_PERCENTAGE = 10	
-STRIPE_CURRENCY = 'usd'	
-STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', '')	
-STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', '')	
+# Stripe
+FREE_DELIVERY_THRESHOLD = 50
+STANDARD_DELIVERY_PERCENTAGE = 10
+STRIPE_CURRENCY = 'usd'
+STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', '')
+STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', '')
 STRIPE_WH_SECRET = os.getenv('STRIPE_WH_SECRET', '')
 
 if 'DEVELOPMENT' in os.environ:
-    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'	
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
     DEFAULT_FROM_EMAIL = 'myecommercestore@example.com'
 else:
     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
