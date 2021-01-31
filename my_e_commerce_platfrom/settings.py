@@ -126,13 +126,11 @@ WSGI_APPLICATION = 'my_e_commerce_platfrom.wsgi.application'
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
 if 'DATABASE_URL' in os.environ:
-    print("using PostgreSQL database")
 
     DATABASES = {
         'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
     },
 else:
-    print("using SQLite3 database")
 
     DATABASES = {
         'default': {
