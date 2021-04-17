@@ -212,3 +212,4 @@ else:
     DEFAULT_FROM_EMAIL = os.environ.get('EMAIL_HOST_USER')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
+DEBUG = 'TRUE'
