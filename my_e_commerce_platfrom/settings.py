@@ -124,19 +124,10 @@ WSGI_APPLICATION = 'my_e_commerce_platfrom.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-if 'DATABASE_URL' in os.environ:
-    print("using PostgreSQL")
-    DATABASES = {
+ 
+DATABASES = {
         'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
     },
-else:
-    print("using SQLite3")
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        }
-    }
 
 
 AUTH_PASSWORD_VALIDATORS = [
